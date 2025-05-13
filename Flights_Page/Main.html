@@ -1,6 +1,58 @@
-Hello, this is a test. 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Airline Page</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <div class="flights-section">
+        <h2>Find Your Flight</h2>
+        <form class="flight-search-form">
+            <div class="form-group">
+                <label for="departure">Departure:</label>
+                <input type="text" id="departure" name="departure" placeholder="City or Airport">
+            </div>
+            <div class="form-group">
+                <label for="arrival">Arrival:</label>
+                <input type="text" id="arrival" name="arrival" placeholder="City or Airport">
+            </div>
+            <div class="form-group">
+                <label for="depart-date">Depart Date:</label>
+                <input type="date" id="depart-date" name="depart-date">
+            </div>
+            <div class="form-group">
+                <label for="return-date">Return Date:</label>
+                <input type="date" id="return-date" name="return-date">
+            </div>
+            <div class="form-group">
+                <label for="passengers">Passengers:</label>
+                <select id="passengers" name="passengers">
+                    <option value="1">1 Passenger</option>
+                    <option value="2">2 Passengers</option>
+                    <option value="3">3 Passengers</option>
+                    <option value="4">4+ Passengers</option>
+                </select>
+            </div>
+            <button type="submit" class="search-button">Search Flights</button>
+        </form>
 
-
-
-
-This is another test. 
+        <div class="featured-flights">
+            <h3>Featured Deals</h3>
+            <ul class="flight-list">
+                <li class="flight-item">
+                    <span class="flight-route">JFK to LAX</span>
+                    <span class="flight-price">$299</span>
+                    <a href="#" class="view-deal">View Deal</a>
+                </li>
+                <li class="flight-item">
+                    <span class="flight-route">ORD to MIA</span>
+                    <span class="flight-price">$199</span>
+                    <a href="#" class="view-deal">View Deal</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

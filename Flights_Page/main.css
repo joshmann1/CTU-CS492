@@ -1,0 +1,122 @@
+body {
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  min-height: 100vh; /* Ensure the body takes up at least the full viewport height */
+  margin: 0; /* Remove default body margin */
+  background-color: #e0f2f7; /* Light blue background for the whole page */
+  font-family: sans-serif; /* A common sans-serif font */
+}
+
+.flights-section {
+  padding: 30px; /* Increased padding */
+  background-color: #fff; /* White background for the form container */
+  border-radius: 10px; /* More rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  width: 80%; /* Adjust width as needed */
+  max-width: 700px; /* Maximum width of the form container */
+}
+
+.flights-section h2 {
+  color: #ff9800; /* Orange heading */
+  margin-bottom: 20px;
+  text-align: center; /* Center the heading */
+}
+
+.flight-search-form {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); /* Slightly wider minmax */
+  gap: 20px; /* Increased gap */
+  margin-bottom: 30px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-size: 1em;
+  color: #1976d2; /* Darker blue label */
+  margin-bottom: 8px;
+  font-weight: bold; /* Make labels bold */
+}
+
+.form-group input,
+.form-group select {
+  padding: 12px;
+  border: 1px solid #bbdefb; /* Light blue border */
+  border-radius: 6px; /* Slightly more rounded input fields */
+  font-size: 1em;
+  color: #333;
+}
+
+.search-button {
+  background-color: #ff9800; /* Orange button */
+  color: white;
+  padding: 14px 24px; /* Slightly larger button padding */
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1.1em;
+  transition: background-color 0.3s ease;
+}
+
+.search-button:hover {
+  background-color: #f57c00; /* Darker orange on hover */
+}
+
+.featured-flights {
+  margin-top: 35px;
+  padding: 20px;
+  background-color: #e3f2fd; /* Very light blue for featured flights */
+  border: 1px solid #bbdefb;
+  border-radius: 6px;
+}
+
+.featured-flights h3 {
+  color: #1976d2; /* Darker blue heading */
+  margin-bottom: 15px;
+}
+
+.flight-list {
+  list-style: none;
+  padding: 0;
+}
+
+.flight-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid #b3e5fc; /* Lighter blue border */
+}
+
+.flight-item:last-child {
+  border-bottom: none;
+}
+
+.flight-route {
+  font-weight: bold;
+  color: #333;
+}
+
+.flight-price {
+  color: #ff9800; /* Orange price */
+  font-weight: bold;
+}
+
+.view-deal {
+  color: #1976d2; /* Darker blue link */
+  text-decoration: none;
+  padding: 10px 16px;
+  border: 1px solid #1976d2;
+  border-radius: 6px;
+  font-size: 0.9em;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.view-deal:hover {
+  background-color: #1976d2; /* Darker blue on hover */
+  color: white;
+}
