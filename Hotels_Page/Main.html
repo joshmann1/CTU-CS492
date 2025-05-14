@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Find a Hotel</title>
+  <link rel="stylesheet" href="main.css">
+</head>
+<body>
+  <section class="flights-section">
+    <h2>Find Your Hotel</h2>
+    <form class="flight-search-form" id="hotel-search-form">
+      <div class="form-group">
+        <label for="city">City:</label>
+        <input type="text" id="city" placeholder="e.g. Miami" required />
+      </div>
+      <div class="form-group">
+        <label for="checkin">Check-In Date:</label>
+        <input type="date" id="checkin" required />
+      </div>
+      <div class="form-group">
+        <label for="checkout">Check-Out Date:</label>
+        <input type="date" id="checkout" required />
+      </div>
+      <div class="form-group">
+        <label for="guests">Guests:</label>
+        <select id="guests">
+          <option value="1">1 Guest</option>
+          <option value="2">2 Guests</option>
+          <option value="3">3 Guests</option>
+          <option value="4">4 Guests</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>&nbsp;</label>
+        <button type="submit" class="search-button">Search Hotels</button>
+      </div>
+    </form>
+
+    <div class="featured-flights">
+      <h3>Featured Deals</h3>
+      <ul class="flight-list">
+        <li class="flight-item">
+          <span class="flight-route">Hilton Downtown</span>
+          <span class="flight-price">$189</span>
+          <a href="#" class="view-deal">View Deal</a>
+        </li>
+        <li class="flight-item">
+          <span class="flight-route">Oceanview Resort</span>
+          <span class="flight-price">$249</span>
+          <a href="#" class="view-deal">View Deal</a>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <script>
+    document.getElementById("hotel-search-form").addEventListener("submit", function(e) {
+      e.preventDefault();
+      alert("Hotel search feature is under development.");
+    });
+  </script>
+</body>
+</html>
