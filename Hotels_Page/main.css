@@ -1,32 +1,66 @@
 body {
+  margin: 0;
+  font-family: sans-serif;
+  background-color: #e0f2f7;
+}
+
+/* HEADER + FOOTER MATCH MAIN PAGE */
+header {
+  background-color: #003580;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0 0;
   display: flex;
-  justify-content: center; /* Center horizontally */
-  align-items: center; /* Center vertically */
-  min-height: 100vh; /* Ensure the body takes up at least the full viewport height */
-  margin: 0; /* Remove default body margin */
-  background-color: #e0f2f7; /* Light blue background for the whole page */
-  font-family: sans-serif; /* A common sans-serif font */
+  justify-content: center;
 }
 
-.flights-section {
-  padding: 30px; /* Increased padding */
-  background-color: #fff; /* White background for the form container */
-  border-radius: 10px; /* More rounded corners */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-  width: 80%; /* Adjust width as needed */
-  max-width: 700px; /* Maximum width of the form container */
+nav ul li {
+  margin: 0 15px;
 }
 
-.flights-section h2 {
-  color: #ff9800; /* Orange heading */
+nav ul li a {
+  text-decoration: none;
+  color: orange;
+  font-weight: 500;
+}
+
+footer {
+  background-color: #003580;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  margin-top: 40px;
+}
+
+/* MAIN CONTAINER */
+.hotel-section {
+  padding: 30px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 80%;
+  max-width: 700px;
+  margin: 40px auto;
+}
+
+/* SECTION TITLE */
+.hotel-section h2 {
+  color: #ff9800;
   margin-bottom: 20px;
-  text-align: center; /* Center the heading */
+  text-align: center;
 }
 
-.flight-search-form {
+/* FORM */
+.hotel-search-form {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); /* Slightly wider minmax */
-  gap: 20px; /* Increased gap */
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px;
   margin-bottom: 30px;
 }
 
@@ -37,24 +71,25 @@ body {
 
 .form-group label {
   font-size: 1em;
-  color: #1976d2; /* Darker blue label */
+  color: #1976d2;
   margin-bottom: 8px;
-  font-weight: bold; /* Make labels bold */
+  font-weight: bold;
 }
 
 .form-group input,
 .form-group select {
   padding: 12px;
-  border: 1px solid #bbdefb; /* Light blue border */
-  border-radius: 6px; /* Slightly more rounded input fields */
+  border: 1px solid #bbdefb;
+  border-radius: 6px;
   font-size: 1em;
   color: #333;
 }
 
+/* BUTTON */
 .search-button {
-  background-color: #ff9800; /* Orange button */
+  background-color: #ff9800;
   color: white;
-  padding: 14px 24px; /* Slightly larger button padding */
+  padding: 14px 24px;
   border: none;
   border-radius: 6px;
   cursor: pointer;
@@ -63,51 +98,52 @@ body {
 }
 
 .search-button:hover {
-  background-color: #f57c00; /* Darker orange on hover */
+  background-color: #f57c00;
 }
 
-.featured-flights {
+/* FEATURED HOTELS SECTION */
+.featured-hotels {
   margin-top: 35px;
   padding: 20px;
-  background-color: #e3f2fd; /* Very light blue for featured flights */
+  background-color: #e3f2fd;
   border: 1px solid #bbdefb;
   border-radius: 6px;
 }
 
-.featured-flights h3 {
-  color: #1976d2; /* Darker blue heading */
+.featured-hotels h3 {
+  color: #1976d2;
   margin-bottom: 15px;
 }
 
-.flight-list {
+.hotel-list {
   list-style: none;
   padding: 0;
 }
 
-.flight-item {
+.hotel-item {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 12px 0;
-  border-bottom: 1px solid #b3e5fc; /* Lighter blue border */
+  border-bottom: 1px solid #b3e5fc;
 }
 
-.flight-item:last-child {
+.hotel-item:last-child {
   border-bottom: none;
 }
 
-.flight-route {
+.hotel-name {
   font-weight: bold;
   color: #333;
 }
 
-.flight-price {
-  color: #ff9800; /* Orange price */
+.hotel-price {
+  color: #ff9800;
   font-weight: bold;
 }
 
 .view-deal {
-  color: #1976d2; /* Darker blue link */
+  color: #1976d2;
   text-decoration: none;
   padding: 10px 16px;
   border: 1px solid #1976d2;
@@ -117,6 +153,6 @@ body {
 }
 
 .view-deal:hover {
-  background-color: #1976d2; /* Darker blue on hover */
+  background-color: #1976d2;
   color: white;
 }
