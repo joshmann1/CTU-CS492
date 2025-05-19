@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Airlines</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f8fa;
+            color: #333;
+        }
+        header {
+            background-color: #003580;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 10px 0;
+            display: flex;
+            justify-content: center;
+        }
+        nav ul li {
+            margin: 0 15px;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: orange;
+            font-weight: 500;
+        }
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            border-radius: 8px;
+        }
+        .section-title {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        .search-form input, .search-form select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+        .search-form button {
+            width: 100%;
+            padding: 12px;
+            background-color: orange;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .search-form button:hover {
+            background-color: #003580;
+        }
+        footer {
+            background-color: #003580;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Airlines</h1>
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Flights</a></li>
+            <li><a href="#">Hotels</a></li>
+            <li><a href="#">Car Rentals</a></li>
+            <li><a href="#">About Us</a></li>
+        </ul>
+    </nav>
+</header>
+
+<div class="container">
+    <div class="search-form">
+        <h2 class="section-title">Search Flights</h2>
+        <input type="text" placeholder="From (City or Airport)">
+        <input type="text" placeholder="To (City or Airport)">
+        <input type="date" placeholder="Departure Date">
+        <input type="date" placeholder="Return Date (optional)">
+        <select>
+            <option>Passengers</option>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4+</option>
+        </select>
+        <button>Search</button>
+    </div>
+
+    <hr>
+
+    <div class="booking-management">
+        <h2 class="section-title">Manage Your Trip</h2>
+        <input type="text" placeholder="Booking Reference">
+        <input type="text" placeholder="Last Name">
+        <button>Manage Booking</button>
+    </div>
+
+    <hr>
+
+    <div class="flight-status">
+        <h2 class="section-title">Check Flight Status</h2>
+        <input type="text" placeholder="Flight Number">
+        <input type="date" placeholder="Date">
+        <button>Check Status</button>
+    </div>
+</div>
+
+<footer>
+    &copy; 2025 FlyHigh Airlines. All Rights Reserved.
+</footer>
+
+</body>
+</html>
