@@ -23,31 +23,32 @@
   <!-- Main container for the car rental booking form -->
 
   <section class="flights-section">
-    <h2>Find Your Flight</h2>
+    <h2>Car Rental Booking</h2>
     <form class="flight-search-form" id="flight-search-form">
         <div class="form-group">
-            <label for="departure">Departure:</label>
-            <input type="text" id="departure" name="departure" placeholder="City or Airport">
+            <label for="pickup-location">Pickup Location:</label>
+            <input type="text" id="pickup-location" name="pickup-location" placeholder="City or Airport">
         </div>
         <div class="form-group">
-            <label for="arrival">Arrival:</label>
-            <input type="text" id="arrival" name="arrival" placeholder="City or Airport">
+            <label for="pickup-date">Pickup Date:</label>
+            <input type="datetime-local" id="datetime-local" name="datetime-local" placeholder="City or Airport">
         </div>
         <div class="form-group">
-                <label for="depart-date">Depart Date:</label>
-            <input type="date" id="depart-date" name="depart-date">
+            <label for="Drop-off-location">Drop-off Location:</label>
+            <input type="text" id="dropoff-location" name="dropoff-location" placeholder="City or Airport">
         </div>
         <div class="form-group">
-            <label for="return-date">Return Date:</label>
-            <input type="date" id="return-date" name="return-date">
+            <label for="dropoff-date">Drop-off Date:</label>
+            <input type="datetime-local" id="dropoff-date" name="dropoff-date">
         </div>
         <div class="form-group">
-            <label for="passengers">Passengers:</label>
-            <select id="passengers" name="passengers">
-                <option value="1">1 Passenger</option>
-                <option value="2">2 Passengers</option>
-                <option value="3">3 Passengers</option>
-                <option value="4">4+ Passengers</option>
+            <label for="car-type">Vehicle Type:</label>
+            <select id="car-type" name="car-type">
+                <option value="economy">Economy</option>
+                <option value="compact">Compact</option>
+                <option value="standard">Standard</option>
+                <option value="luxury">Luxury</option>
+                <option value="suv">suv</option>
             </select>
         </div>
         <button type="submit" class="search-button">Search Flights</button>
