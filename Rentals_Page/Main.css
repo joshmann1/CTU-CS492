@@ -1,20 +1,57 @@
 body {
-  display: flex;
-  justify-content: center; /* Center horizontally */
   align-items: center; /* Center vertically */
-  min-height: 100vh; /* Ensure the body takes up at least the full viewport height */
-  margin: 0; /* Remove default body margin */
-  background-color: #e0f2f7; /* Light blue background for the whole page */
-  font-family: sans-serif; /* A common sans-serif font */
+  display: flex;
+  flex-direction: column; /* Arrange items vertically */
+  min-height: 100vh; /* Ensure full viewport height */
+  margin: 0;
+  background-color: #e0f2f7;
+  font-family: sans-serif;
+}
+
+header {
+  background-color: #003580;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  width: 100%;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0 0;
+  display: flex;
+  justify-content: center;
+}
+
+nav ul li {
+  margin: 0 15px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: orange;
+  font-weight: 500;
+}
+
+footer {
+  background-color: #003580;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  margin-top: 40px;
+  width: 100%;
 }
 
 .flights-section {
-  padding: 30px; /* Increased padding */
-  background-color: #fff; /* White background for the form container */
-  border-radius: 10px; /* More rounded corners */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-  width: 80%; /* Adjust width as needed */
-  max-width: 700px; /* Maximum width of the form container */
+  padding: 30px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 80%;
+  max-width: 700px;
+  margin-top: 20px; /* Add some top margin to separate from the header */
+  margin-bottom: 20px; /* Add some bottom margin to separate from the footer */
 }
 
 .flights-section h2 {
