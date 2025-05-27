@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FlyHigh Airlines</title>
+    <title>FlyHigh Airline</title>
     <style>
         body {
             font-family: sans-serif;
@@ -61,21 +61,34 @@
             bottom: 0;
             width: 100%;
         }
+
+        .login-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            padding: 8px 16px;
+            background-color: #1976d2;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+}
     </style>
 </head>
 <body>
 
 <header>
-    <h1>FlyHigh Airlines</h1>
-    <nav>
-        <ul>
-            <li><a href="../Main_Page/Main.html">Home</a></li>
-            <li><a href="../Flights_Page/Main.html">Flights</a></li>
-            <li><a href="../Hotels_Page/Main.html">Hotels</a></li>
-            <li><a href="../Rentals_Page/Main.html">Car Rentals</a></li>
-            <li><a href="../About_Page/about.html">About Us</a></li>
-        </ul>
-    </nav>
+  <h1>FlyHigh Airline</h1>
+  <nav>
+    <ul>
+      <li><a href="Main.html">Home</a></li>
+      <li><a href="flights.php">Flights</a></li>
+      <li><a href="Hotels.php">Hotels</a></li>
+      <li><a href="Cart_Rentals.php">Car Rentals</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="Cart.php">Cart</a></li>
+    </ul>
+  </nav>
 </header>
 
 <div class="container">
@@ -84,8 +97,28 @@
 </div>
 
 <footer>
-    &copy; 2025 FlyHigh Airlines<a href="../Admin/admin.html">.</a> All Rights Reserved.
+    &copy; 2025 FlyHigh Airlines. All Rights Reserved.
 </footer>
+
+<button class="login-btn" onclick="loginPrompt()">Login</button>
+<script>
+    function loginPrompt() {
+        const username = prompt("Enter username:");
+        const password = prompt("Enter password:");
+
+        if (username === 'admin' && password === 'admin') {
+            window.location.href = "Admin.html";
+        } else {
+            alert("Invalid credentials!");
+        }
+    }
+
+    document.getElementById("customization-form").addEventListener("submit", function(e) {
+        e.preventDefault();
+        const targetPage = document.getElementById('target-page').value;
+        alert("Settings for " + targetPage + " have been saved successfully!");
+    });
+</script>
 
 </body>
 </html>
