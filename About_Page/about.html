@@ -3,41 +3,42 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>About Us - SkyBound Travel</title>
+  <title>About Us - FlyHigh Airline</title>
   <link rel="stylesheet" href="main.css" />
 </head>
 <body>
   <header class="site-header">
     <h1>FlyHigh Airline</h1>
     <nav>
-      <ul class="nav-links">
-        <li><a href="../Main_Page/Main.html">Home</a></li>
-        <li><a href="../Flights_Page/Main.html">Flights</a></li>
-        <li><a href="../Hotels_Page/Main.html">Hotels</a></li>
-        <li><a href="../Rentals_Page/Main.html">Car Rentals</a></li>
-        <li><a href="../About_Page/about.html">About Us</a></li>
-      </ul>
-    </nav>
+    <ul>
+      <li><a href="Main.html">Home</a></li>
+      <li><a href="flights.php">Flights</a></li>
+      <li><a href="Hotels.php">Hotels</a></li>
+      <li><a href="Cart_Rentals.php">Car Rentals</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="Cart.php">Cart</a></li>
+    </ul>
+  </nav>
   </header>
 
   <main>
     <section class="flights-section">
-      <h2>About SkyBound Travel</h2>
+      <h2>About FlyHigh Airline</h2>
       <p class="about-text">
-        Welcome to SkyBound Travel, your trusted partner in finding the best flight deals around the world. Our mission is to make air travel affordable, efficient, and enjoyable for everyone.
+        Welcome to FlyHigh Airline, your trusted partner in finding the best flight deals around the world. Our mission is to make air travel affordable, efficient, and enjoyable for everyone.
       </p>
       <p class="about-text">
         Founded in 2020, we specialize in providing real-time airfare comparisons, personalized travel suggestions, and user-friendly booking experiences. Whether you're a frequent flyer or planning your first trip, we’re here to help you reach your destination with ease.
       </p>
       <p class="about-text">
-        Our dedicated team of travel experts and tech enthusiasts is passionate about simplifying travel. With a focus on transparency, value, and customer satisfaction, SkyBound Travel is here to elevate the way you book your next adventure.
+        Our dedicated team of travel experts and tech enthusiasts is passionate about simplifying travel. With a focus on transparency, value, and customer satisfaction, FlyHigh Airline is here to elevate the way you book your next adventure.
       </p>
     </section>
 
     <section class="flights-section">
       <h2>Contact Us</h2>
-      <p class="about-text"><strong>Email:</strong> support@skyboundtravel.com</p>
-      <p class="about-text"><strong>Phone:</strong> 1-800-555-TRVL (8785)</p>
+      <p class="about-text"><strong>Email:</strong> support@FlyHighAirline.com</p>
+      <p class="about-text"><strong>Phone:</strong> 1-800-555-FLYH (8785)</p>
       <p class="about-text"><strong>Hours:</strong> Mon-Fri, 9 AM – 6 PM EST</p>
     </section>
 
@@ -57,5 +58,25 @@
   <footer class="site-footer">
     <p>&copy; 2025 SkyBound Travel. All rights reserved.</p>
   </footer>
+
+  <button class="login-btn" onclick="loginPrompt()">Login</button>
+<script>
+    function loginPrompt() {
+        const username = prompt("Enter username:");
+        const password = prompt("Enter password:");
+
+        if (username === 'admin' && password === 'admin') {
+            window.location.href = "../Admin_Page/Admin.html";
+        } else {
+            alert("Invalid credentials!");
+        }
+    }
+
+    document.getElementById("customization-form").addEventListener("submit", function(e) {
+        e.preventDefault();
+        const targetPage = document.getElementById('target-page').value;
+        alert("Settings for " + targetPage + " have been saved successfully!");
+    });
+</script>
 </body>
 </html>
