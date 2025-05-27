@@ -3,166 +3,135 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Page</title>
+    <title>Admin Panel - FlyHigh Airline</title>
+    <link rel="stylesheet" href="main.css">
     <style>
-        body {
-            align-items: center; /* Center vertically */
-            display: flex;
-            flex-direction: column; /* Arrange items vertically */
-            min-height: 100vh; /* Ensure full viewport height */
-            margin: 0;
-            background-color: #e0f2f7;
-            font-family: sans-serif;
-        }
-
-        header {
-            background-color: #003580;
-            color: white;
+        .admin-section {
             padding: 20px;
-            text-align: center;
-            width: 100%;
-        }
-
-        nav ul {
-            list-style: none;
-            padding: 0;
-            margin: 10px 0 0;
-            display: flex;
-            justify-content: center;
-        }
-
-        nav ul li {
-            margin: 0 15px;
-        }
-
-        nav ul li a {
-            text-decoration: none;
-            color: orange;
-            font-weight: 500;
-        }
-
-        footer {
-            background-color: #003580;
-            color: white;
-            text-align: center;
-            padding: 10px;
-            margin-top: auto; /* Push footer to the bottom */
-            width: 100%;
-        }
-
-        /* Styles specifically for the login container, adapted from your provided CSS */
-        .login-container {
-            padding: 30px;
-            background-color: #fff;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: 20px auto;
             width: 80%;
-            max-width: 400px; /* Adjusted max-width for a login form */
-            margin-top: 40px; /* Space from header */
-            margin-bottom: 20px; /* Space before footer */
-            text-align: center;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            border-radius: 10px;
         }
 
-        .login-container h2 {
-            color: #ff9800; /* Orange heading */
-            margin-bottom: 20px;
+        .admin-section h2 {
             text-align: center;
+            color: #1976d2;
         }
 
-        .form-group {
+        .admin-form-group {
+            margin-bottom: 15px;
             display: flex;
             flex-direction: column;
-            margin-bottom: 15px; /* Added margin for spacing */
-            text-align: left; /* Align labels/inputs to the left */
         }
 
-        .form-group label {
-            font-size: 1em;
-            color: #1976d2; /* Darker blue label */
+        .admin-form-group label {
             margin-bottom: 8px;
             font-weight: bold;
+            color: #003580;
         }
 
-        .form-group input[type="text"],
-        .form-group input[type="password"] {
-            padding: 12px;
-            border: 1px solid #bbdefb; /* Light blue border */
+        .admin-form-group input,
+        .admin-form-group select,
+        .admin-form-group textarea {
+            padding: 10px;
+            border: 1px solid #bbdefb;
             border-radius: 6px;
-            font-size: 1em;
-            color: #333;
-            width: calc(100% - 24px); /* Account for padding */
         }
 
-        .login-button { /* Renamed from .search-button to be more specific */
-            background-color: #ff9800; /* Orange button */
+        .save-button {
+            padding: 10px 20px;
+            background-color: #1976d2;
             color: white;
-            padding: 14px 24px;
             border: none;
             border-radius: 6px;
             cursor: pointer;
-            font-size: 1.1em;
-            transition: background-color 0.3s ease;
-            width: 100%; /* Make button full width */
-            margin-top: 15px; /* Space above button */
-        }
-
-        .login-button:hover {
-            background-color: #f57c00; /* Darker orange on hover */
-        }
-
-        .links {
             margin-top: 20px;
-            font-size: 0.9em;
+            transition: background-color 0.3s ease;
         }
 
-        .links a {
-            color: #1976d2; /* Darker blue link */
-            text-decoration: none;
-            margin: 0 10px;
-        }
-
-        .links a:hover {
-            text-decoration: underline;
+        .save-button:hover {
+            background-color: #0d47a1;
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>My Website</h1>
-        <nav>
-            <ul>
-                <li><a href="../Main_Page/Main.html">Home</a></li>
-                <li><a href="../Flights_Page/Main.html">Flights</a></li>
-                <li><a href="../Hotels_Page/Main.html">Hotels</a></li>
-                <li><a href="../Rentals_Page/Main.html">Car Rentals</a></li>
-                <li><a href="../About_Page/about.html">About Us</a></li>
-            </ul>
-        </nav>
-    </header>
+<header>
+    <h1>FlyHigh Airline</h1>
+  <nav>
+    <ul>
+      <li><a href="Main.html">Home</a></li>
+      <li><a href="flights.php">Flights</a></li>
+      <li><a href="Hotels.php">Hotels</a></li>
+      <li><a href="Cart_Rentals.php">Car Rentals</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="Cart.php">Cart</a></li>
+    </ul>
+  </nav>
+</header>
 
-    <div class="login-container">
-        <h2>Login</h2>
-        <form action="/login" method="POST">
-            <div class="form-group">
-                <label for="username">Username:</label>
-                <input type="text" id="username" name="username" required>
-            </div>
-            <div class="form-group">
-                <label for="password">Password:</label>
-                <input type="password" id="password" name="password" required>
-            </div>
-            <div class="form-group">
-                <button type="submit" class="login-button">Login</button>
-            </div>
-        </form>
-        <div class="links">
-            <a href="#">Forgot Password?</a>
-            <a href="#">Sign Up</a>
+<section class="admin-section">
+    <h2>Website Customizer</h2>
+    <form id="customization-form">
+        <div class="admin-form-group">
+            <label for="target-page">Select Page to Customize:</label>
+            <select id="target-page" name="target-page">
+                <option value="home">Home Page</option>
+                <option value="flights">Flights Page</option>
+                <option value="hotels">Hotels Page</option>
+                <option value="rentals">Car Rentals Page</option>
+                <option value="about">About Us Page</option>
+                <option value="cart">Cart Page</option>
+            </select>
         </div>
-    </div>
 
-    <footer>
-        <p>&copy; 2025 My Website. All rights reserved.</p>
-    </footer>
+        <div class="admin-form-group">
+            <label for="page-title">Page Title:</label>
+            <input type="text" id="page-title" name="page-title" placeholder="Enter page title">
+        </div>
+
+        <div class="admin-form-group">
+            <label for="background-color">Background Color:</label>
+            <input type="color" id="background-color" name="background-color" value="#e0f2f7">
+        </div>
+
+        <div class="admin-form-group">
+            <label for="text-color">Text Color:</label>
+            <input type="color" id="text-color" name="text-color" value="#333333">
+        </div>
+
+        <div class="admin-form-group">
+            <label for="font-size">Font Size:</label>
+            <select id="font-size" name="font-size">
+                <option value="14px">14px</option>
+                <option value="16px" selected>16px</option>
+                <option value="18px">18px</option>
+                <option value="20px">20px</option>
+                <option value="24px">24px</option>
+            </select>
+        </div>
+
+        <div class="admin-form-group">
+            <label for="custom-css">Custom CSS:</label>
+            <textarea id="custom-css" name="custom-css" rows="5" placeholder="Enter custom CSS"></textarea>
+        </div>
+
+        <button type="submit" class="save-button">Save Changes</button>
+    </form>
+</section>
+
+<footer>
+    &copy; 2025 FlyHigh Airlines. All Rights Reserved.
+</footer>
+
+<script>
+    document.getElementById("customization-form").addEventListener("submit", function(e) {
+        e.preventDefault();
+        const targetPage = document.getElementById('target-page').value;
+        alert("Settings for " + targetPage + " have been saved successfully!");
+    });
+</script>
+
 </body>
 </html>
