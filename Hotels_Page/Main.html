@@ -1,12 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Find a Hotel</title>
-  <link rel="stylesheet" href="main.css">
+  <link rel="stylesheet" href="main.css" />
+  <style>
+    .cart-icon{position:fixed;top:20px;right:20px;z-index:999;}
+    .cart-icon img{width:40px;height:40px;cursor:pointer;}
+  </style>
 </head>
 <body>
+<a class="cart-icon" href="../Cart_Page/cart.html">
+  <img src="https://cdn-icons-png.flaticon.com/512/1170/1170678.png" alt="Cart">
+</a>
+
 <header>
   <h1>FlyHigh Airline</h1>
   <nav>
@@ -51,29 +59,74 @@
   </form>
 
   <div class="featured-hotels">
-    <h3>Featured Deals</h3>
-    <ul class="hotel-list">
-      <li class="hotel-item">
-        <span class="hotel-name">Hilton Downtown</span>
-        <span class="hotel-price">$189</span>
-        <a href="#" class="view-deal">View Deal</a>
-      </li>
-      <li class="hotel-item">
-        <span class="hotel-name">Oceanview Resort</span>
-        <span class="hotel-price">$249</span>
-        <a href="#" class="view-deal">View Deal</a>
-      </li>
-    </ul>
+    <h3>Available Hotels</h3>
+    <ul class="hotel-list" id="hotel-results"></ul>
   </div>
 </section>
+
+<footer>&copy; 2025 FlyHigh Airlines. All Rights Reserved.</footer>
+
 <script>
-  document.getElementById("hotel-search-form").addEventListener("submit", function(e) {
-    e.preventDefault();
-    alert("Hotel search feature is under development.");
+/* --- Self-contained hotel “database” (10 cities, 20 hotels) --- */
+const HOTELS = [
+  { name: "Hilton Times Square",    city: "New York",    price: 230 },
+  { name: "Marriott Central Park",  city: "New York",    price: 210 },
+  { name: "The Venetian",           city: "Las Vegas",   price: 180 },
+  { name: "Bellagio",               city: "Las Vegas",   price: 250 },
+  { name: "Hyatt Regency",          city: "Chicago",     price: 190 },
+  { name: "Hotel Lincoln",          city: "Chicago",     price: 160 },
+  { name: "Fairmont San Francisco", city: "San Francisco", price: 270 },
+  { name: "The Marker",             city: "San Francisco", price: 220 },
+  { name: "W South Beach",          city: "Miami",       price: 260 },
+  { name: "Fontainebleau",          city: "Miami",       price: 300 },
+  { name: "The Drake",              city: "Los Angeles", price: 240 },
+  { name: "Sheraton Grand",         city: "Los Angeles", price: 210 },
+  { name: "Hotel Zetta",            city: "Seattle",     price: 200 },
+  { name: "The Edgewater",          city: "Seattle",     price: 250 },
+  { name: "JW Marriott",            city: "Houston",     price: 190 },
+  { name: "The Lancaster",          city: "Houston",     price: 180 },
+  { name: "The Ritz-Carlton",       city: "Boston",      price: 280 },
+  { name: "The Liberty Hotel",      city: "Boston",      price: 230 },
+  { name: "Omni Austin",            city: "Austin",      price: 200 },
+  { name: "Hotel Van Zandt",        city: "Austin",      price: 210 }
+];
+
+/* Render search results */
+function renderResults(list){
+  const ul = document.getElementById("hotel-results");
+  ul.innerHTML = "";
+  if(!list.length){
+    ul.innerHTML = "<li>No hotels found.</li>";
+    return;
+  }
+  list.forEach(h => {
+    ul.insertAdjacentHTML("beforeend",
+      `<li class="hotel-item">
+         <span class="hotel-name">${h.name}</span>
+         <span class="hotel-price">$${h.price}</span>
+         <button class="view-deal" onclick="addToCart('${h.name}','${h.city}',${h.price})">Add to Cart</button>
+       </li>`);
   });
+}
+
+/* Add selected hotel to localStorage cart */
+function addToCart(name, city, price){
+  const cart = JSON.parse(localStorage.getItem("hotelCart")||"[]");
+  cart.push({ name, city, price,
+              guests: document.getElementById("guests").value,
+              checkin: document.getElementById("checkin").value,
+              checkout: document.getElementById("checkout").value });
+  localStorage.setItem("hotelCart", JSON.stringify(cart));
+  alert(name + " added to cart!");
+}
+
+/* Form submission handler */
+document.getElementById("hotel-search-form").addEventListener("submit", e=>{
+  e.preventDefault();
+  const city = document.getElementById("city").value.trim().toLowerCase();
+  const matches = HOTELS.filter(h => h.city.toLowerCase() === city);
+  renderResults(matches);
+});
 </script>
-<footer>
-  &copy; 2025 FlyHigh Airlines. All Rights Reserved.
-</footer>
 </body>
 </html>
